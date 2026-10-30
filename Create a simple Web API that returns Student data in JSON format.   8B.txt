@@ -1,0 +1,74 @@
+8b
+Here is the transcribed text from the provided handwritten pages:
+
+	•	Practical No. 8B 
+	•	Aim: Create a simple web API that returns student data in JSON format. 
+	•	Step 1 - Create web API project 
+	•	Open visual studio 2026 
+	•	Click new project 
+	•	ASP.NET core Web API 
+	•	Click next 
+	•	Step 2 - Configure project 
+	•	Project Name - Student API (pract 8b) 
+	•	Framework - .Net 10 or any last machine 
+	•	Click create 
+	•	Step 3 - Create student model 
+	•	Right click: project $\rightarrow$ Add $\rightarrow$ New Folder 
+	•	Name: models 
+	•	Name: student.cs 
+	•	Inside: Model folder $\rightarrow$ Class 
+	•	Step 4 - Write code  C#  namespace Pract8b.models
+	•	{
+	•	    public class student
+	•	    {
+	•	        public int Id {get; set;}
+	•	        public string Name {get; set;}
+	•	        public string course {get; set;}
+	•	    }
+	•	}
+	•	```[cite: 43]
+	•	
+	•	   
+	•	Step 5 - Create API controller 
+	•	Right click: project $\rightarrow$ Add $\rightarrow$ New Folder 
+	•	Name: Controllers 
+	•	Inside Controllers folder: right click $\rightarrow$ Add $\rightarrow$ controller 
+	•	Choose: API controller-Empty 
+	•	Name: studentController 
+	•	Step 6 - Write code (studentController.cs)  C#  using Microsoft.AspNetCore.Mvc;
+	•	using Pract8b.models;
+	•	
+	•	namespace pract8b.controllers
+	•	{
+	•	    [ApiController]
+	•	    [Route("api/[controller]")]
+	•	    public class studentController : ControllerBase
+	•	    {
+	•	        [HttpGet]
+	•	        public List<student> Getstudents()
+	•	        {
+	•	            return new List<student>()
+	•	            {
+	•	                new student
+	•	                {
+	•	                    Id=1,
+	•	                    Name="Parth",
+	•	                    Course="Bsc.I.T.",
+	•	                    Age:20
+	•	                },
+	•	                new student
+	•	                {
+	•	                    Id=2,
+	•	                    Name="Yash",
+	•	                    Course="Bsc CS",
+	•	                    Age=21
+	•	                }
+	•	            };
+	•	        }
+	•	    }
+	•	}
+	•	```[cite: 44, 45]
+	•	
+	•	   
+	•	Step 7 - Run Application 
+	•	Test API $\rightarrow$ In browser open: https://localhost:xxxxx/api/student

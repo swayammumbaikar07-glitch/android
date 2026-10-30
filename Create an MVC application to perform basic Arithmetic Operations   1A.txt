@@ -1,0 +1,97 @@
+Practical 1 a
+
+namespace practia.Models
+{
+ public class Calculator
+ {
+ public double num1 { get; set; }
+ public double num2 { get; set; }
+ public string opr { get; set; }
+ public double res { get; set; }
+ }
+}
+
+Here is the text transcribed from the provided image:
+
+	•	Step 6 - Open Calculator 
+	•	In solution explorer: 
+	•	open -> Controller $\implies$ Double: click: HomeController.cs 
+	•	Write code: 
+C#
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using practica.Models;
+
+namespace practica.Controllers
+{
+    public class HomeController : Controller
+    {
+        public Action Result Index(Calculator calc)
+        {
+            switch (calc.opr)
+            {
+                case "+":
+                    calc.res = calc.num1 + calc.num2;
+                    break;
+                case "-":
+                    calc.res = calc.num1 - calc.num2;
+                    break;
+
+Here is the transcribed text from the subsequent pages:
+Continuation from image_7a9e39.jpg:
+C#
+
+                case "*":
+                    calc.res = calc.num1 * calc.num2;
+                    break;
+                case "/":
+                    calc.res = calc.num1 / calc.num2;
+                    break;
+            }
+            return View(calc);
+        }
+    }
+}
+```[cite: 2]
+
+* Step 7 - Open Views folder[cite: 2]
+  * In Solution Explorer:[cite: 2]
+    - open $\rightarrow$ Views $\rightarrow$ Home[cite: 2]
+    - Double-click: `Index.cshtml`[cite: 2]
+
+* Write code:[cite: 2]
+
+```html
+@model practica.Models.Calculator
+
+<h2>Calculator</h2>
+<form method="post">
+    Enter 1st Number <input type="text" step="any"
+        asp-for="num1" />
+    <p>Enter 2nd Number <input type="text"
+        step="any"
+```[cite: 2]
+
+---
+
+### Continuation from `image_7a9e1c.jpg`:
+
+```html
+    >
+    <input type="submit" value="Calculate"/>
+</form>
+@if(Model != null)
+{
+    <h3>Result: @Model.res</h3>
+}
+```[cite: 3]
+
+* Step 9 - Run Application[cite: 3]
+
+
+
+

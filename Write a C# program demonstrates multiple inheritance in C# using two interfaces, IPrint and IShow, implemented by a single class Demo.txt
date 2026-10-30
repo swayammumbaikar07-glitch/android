@@ -1,0 +1,40 @@
+5 
+
+using System;
+
+// First interface
+public interface IPrint
+{
+    void PrintMessage();
+}
+
+// Second interface
+public interface IShow
+{
+    void ShowMessage();
+}
+
+// Class implementing multiple interfaces
+public class Demo : IPrint, IShow
+{
+    public void PrintMessage()
+    {
+        Console.WriteLine("Printing from IPrint interface.");
+    }
+
+    public void ShowMessage()
+    {
+        Console.WriteLine("Showing from IShow interface.");
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Demo obj = new Demo();
+        
+        obj.PrintMessage();
+        obj.ShowMessage();
+    }
+}

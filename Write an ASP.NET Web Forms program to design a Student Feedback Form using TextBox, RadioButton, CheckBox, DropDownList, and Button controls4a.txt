@@ -1,0 +1,41 @@
+from
+student name
+gender
+course
+accept a condition(checkbox)
+calender
+submit
+label
+
+
+
+namespace Pract_4a
+{
+    public partial class StudentForm : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            string gender = "";
+            if (RadioButton1.Checked)
+                gender = "Male";
+            else if (RadioButton2.Checked)
+                gender = "Female";
+
+            if (CheckBox1.Checked)
+            {
+                Label1.Text = "Student Name:" + TextBox1.Text + 
+                              "<p> Gender:" + gender + 
+                              "<p> Course:" + DropDownList1.SelectedValue + 
+                              "<p> Date:" + Calendar1.SelectedDate.ToShortDateString();
+            }
+            else
+            {
+                Label1.Text = "Please accept terms and condition";
+            }
+        }
+    }
+}

@@ -1,0 +1,52 @@
+Practical 1b
+
+
+Here is the transcribed C# program for generating Floyd's Triangle from the image, along with its expected output.
+C# Code
+C#
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Pract1B
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            int n, num = 1;
+            Console.WriteLine("Enter number of row");
+            n = Convert.ToInt32(Console.ReadLine());
+            
+            for (int i = 1; i <= n; i++)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write(num + " ");
+                    num++;
+                }
+                Console.WriteLine();
+            }
+            
+            Console.ReadLine();
+        }
+    }
+}
+```[cite: 1]
+
+---
+
+### Example Output
+
+If you run the program and enter `4` when prompted for the number of rows:
+
+```text
+Enter number of row
+4
+1 
+2 3 
+4 5 6 
+7 8 9 10 

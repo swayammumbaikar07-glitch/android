@@ -1,0 +1,61 @@
+Practical 1c
+
+Here is the transcribed C# program from the provided handwritten pages, designed to accept and sort city names, along with its expected output.
+C# Code
+C#
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Practic
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] cities = new string[5];
+            Console.WriteLine("Enter 5 cities name");
+            
+            for (int i = 0; i < 5; i++)
+            {
+                cities[i] = Console.ReadLine();
+            }
+            
+            Array.Sort(cities);
+            
+            Console.WriteLine("cities in sorted order");
+            
+            foreach (string city in cities)
+            {
+                Console.WriteLine(city);
+            }
+            
+            Console.ReadLine();
+        }
+    }
+}
+```[cite: 2, 3]
+
+---
+
+### Example Output
+
+If you run the program and enter five city names:
+
+```text
+Enter 5 cities name
+Pune
+Delhi
+Mumbai
+Chennai
+Bangalore
+
+cities in sorted order
+Bangalore
+Chennai
+Delhi
+Mumbai
+Pune

@@ -1,0 +1,60 @@
+2c
+Here is the transcribed C# program from the handwritten pages demonstrating Constructor Overloading, along with its expected output.
+C# Code
+C#
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Pract2C
+{
+    class student
+    {
+        public student()
+        {
+            Console.WriteLine("Inside Default constructor");
+        }
+
+        public student(string name)
+        {
+            Console.WriteLine("Inside Parameterized Constructor");
+            Console.WriteLine("student name is " + name);
+        }
+
+        public student(string name, int age)
+        {
+            Console.WriteLine("Inside Parameterized Constructor");
+            Console.WriteLine("student name is " + name + " Age is " + age);
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            student s1 = new student();
+            student s2 = new student("John");
+            student s3 = new student("Mery", 20);
+
+            Console.ReadLine();
+        }
+    }
+}
+```[cite: 9, 10]
+
+---
+
+### Example Output
+
+When you run the program, it will produce the following output:
+
+```text
+Inside Default constructor
+Inside Parameterized Constructor
+student name is John
+Inside Parameterized Constructor
+student name is Mery Age is 20
+```[cite: 9, 10]

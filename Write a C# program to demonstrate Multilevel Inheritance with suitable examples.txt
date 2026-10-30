@@ -1,0 +1,18 @@
+10 
+
+using System;
+
+// Base class class Animal { public void Eat() { Console.WriteLine("Animal is eating."); } }
+
+// Derived class class Dog : Animal { public void Bark() { Console.WriteLine("Dog is barking."); } }
+
+// Derived from Dog class Puppy : Dog { public void Weep() { Console.WriteLine("Puppy is weeping."); } }
+
+// Main class class Program { static void Main() { Puppy p = new Puppy();
+
+
+    p.Eat();
+    p.Bark();
+    p.Weep();
+}
+}

@@ -1,0 +1,15 @@
+
+
+using System;
+
+// Base class class Parent { public void DisplayParent() { Console.WriteLine("This is the Parent class."); } }
+
+// Derived class class Child : Parent { public void DisplayChild() { Console.WriteLine("This is the Child class."); } }
+
+// Main class class Program { static void Main() { Child obj = new Child();
+
+
+    obj.DisplayParent();
+    obj.DisplayChild();
+}
+}

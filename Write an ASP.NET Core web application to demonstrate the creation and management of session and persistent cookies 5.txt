@@ -1,0 +1,65 @@
+5 
+Here is the transcribed ASP.NET C# code from the handwritten pages demonstrating Cookies Demonstration(Session and Persistent Cookies), along with its expected behavior/output.
+C# Code (cookiesDemo.aspx.cs)
+C#
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace pract5A
+{
+    public partial class cookiesDemo : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            // Creating a Session Cookie (expires when the browser is closed)
+            HttpCookie sc = new HttpCookie("sessionUser");
+            sc.Value = TextBox1.Text;
+            Response.Cookies.Add(sc);
+
+            // Creating a Persistent Cookie (persists for 3 days)
+            HttpCookie pc = new HttpCookie("PerisistUser");
+            pc.Value = TextBox1.Text;
+            pc.Expires = DateTime.Now.AddDays(3);
+            Response.Cookies.Add(pc);
+
+            Label1.Text = "cookies Saved Successfully";
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            // Retrieving values from Cookies
+            string sd = Request.Cookies["sessionUser"].Value;
+            string pd = Request.Cookies["PerisistUser"].Value;
+
+            Label1.Text = "Session cookies " + sd + "<p>Persistent cookies " + pd;
+        }
+    }
+}
+```[cite: 22, 23]
+
+---
+
+### Expected Output & Behavior
+
+1. **When you enter text (e.g., `JohnDoe`) in `TextBox1` and click `Button1` (Save Cookie):**
+   * Output text displayed on `Label1`:
+     ```text
+     cookies Saved Successfully
+     ```[cite: 22]
+
+2. **When you click `Button2` (Retrieve Cookie):**
+   * Output text displayed on `Label1`:
+     ```text
+     Session cookies JohnDoe
+     Persistent cookies JohnDoe
+     ```[cite: 23]

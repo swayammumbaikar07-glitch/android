@@ -1,0 +1,75 @@
+3a 
+Here is the transcribed C# program from the handwritten pages demonstrating Arithmetic Operations using C# Delegates, along with its expected output.
+C# Code
+C#
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Pract3A
+{
+    public delegate void calc(int a, int b);
+
+    class arithmetic
+    {
+        public void add(int a, int b)
+        {
+            Console.WriteLine("Addition = " + (a + b));
+        }
+
+        public void sub(int a, int b)
+        {
+            Console.WriteLine("Substraction = " + (a - b));
+        }
+
+        public void mul(int a, int b)
+        {
+            Console.WriteLine("Multiplication = " + (a * b));
+        }
+
+        public void div(int a, int b)
+        {
+            Console.WriteLine("Division = " + (a / b));
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            arithmetic a = new arithmetic();
+            calc c;
+
+            c = a.add;
+            c(40, 20);
+
+            c = a.sub;
+            c(40, 20);
+
+            c = a.mul;
+            c(40, 20);
+
+            c = a.div;
+            c(40, 20);
+
+            Console.ReadLine();
+        }
+    }
+}
+```[cite: 17, 18]
+
+---
+
+### Example Output
+
+When you run the program, it will produce the following output:
+
+```text
+Addition = 60
+Substraction = 20
+Multiplication = 800
+Division = 2
+```[cite: 17, 18]

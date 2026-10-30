@@ -1,0 +1,71 @@
+7 
+Here is the transcribed text from the provided handwritten pages:
+
+	•	Practical No. 7 
+	•	Aim: Develop a PWA that works in offline mode using service worker. 
+	•	Write code in index.cshtml: 
+	•	In solution explorer $\rightarrow$ Views $\rightarrow$ Home $\rightarrow$ index.cshtml 
+	•	HTML  @{
+	•	    ViewData["Title"] = "Home page";
+	•	}
+	•	<div class="text-center">
+	•	    <h1>college Information Portal</h1>
+	•	    <h3>PWA offline demo</h3>
+	•	    <p>Works without internet</p>
+	•	</div>
+	•	```
+	•	
+	•	   
+	•	Create manifest file: 
+	•	In solution explorer $\rightarrow$ Right click wwwroot folder $\rightarrow$ Add $\rightarrow$ New item $\rightarrow$ Search and select JSON file. 
+	•	Name: manifest.json 
+	•	Click: Add[cite: 35] 
+	•	Create icons folder: 
+	•	Download any 2 png images (icon1.png, icon2.png) and copy it. 
+	•	In solution explorer $\rightarrow$ Right click wwwroot $\rightarrow$ Add $\rightarrow$ New folder. 
+	•	Name: icons. 
+	•	Paste these 2 png images in icons. 
+	•	Create service-worker: 
+	•	In solution explorer $\rightarrow$ Add $\rightarrow$ New item $\rightarrow$ Search select $\rightarrow$ JavaScript. 
+	•	Name: service-worker.js. 
+	•	Click add. 
+	•	Write code:  JavaScript  const CACHE_NAME = "pwa-cache-v1";
+	•	const urlsToCache = ["/", "/Home/Index"];
+	•	self.addEventListener('install', event => {
+	•	    event.waitUntil(caches.open(CACHE_NAME).then
+	•	    (cache => { return cache.addAll
+	•	    (urlsToCache); }));
+	•	});
+	•	self.addEventListener('fetch', event => {
+	•	    event.respondWith(caches.match(event.request).then
+	•	    (respond => { return respond || fetch(event.request); }));
+	•	});
+	•	```[cite: 36]
+	•	
+	•	   
+	•	Type code in layout.cshtml: 
+	•	Views $\rightarrow$ shared $\rightarrow$ layout.cshtml 
+	•	Inside <head> add: <link rel="manifest" href="manifest.json"/> 
+	•	Before closing </body> tag add following script:  HTML  <script>
+	•	if ('ServiceWorker' in navigator)
+	•	{
+	•	    navigator.ServiceWorker.register('/service-worker.js').
+	•	    then(c => console.log('Service Worker Registered'));
+	•	}
+	•	</script>
+	•	```
+	•	
+	•	   
+	•	Write code in program.cs file: 
+	•	Open program.cs 
+	•	Write code:  C#  app.UseStaticFiles();
+	•	app.UseRouting();
+	•	```[cite: 38]
+	•	
+	•	   
+	•	Save project $\rightarrow$ Run application[cite: 38] 
+	•	Verify service worker: 
+	•	Open Developer options in Browser or F12 $\rightarrow$ Application $\rightarrow$ service worker. 
+	•	Ensure: 
+	•	service = -worker.js 
+	•	status = activated and running

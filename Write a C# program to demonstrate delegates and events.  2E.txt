@@ -1,0 +1,57 @@
+2e 
+
+Here is the transcribed C# program from the handwritten pages demonstrating Delegates and Events, along with its expected output.
+C# Code
+C#
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Pract2E
+{
+    public delegate void message();
+
+    class test
+    {
+        public event message notify;
+
+        public void show()
+        {
+            Console.WriteLine("Method inside test class");
+            notify();
+        }
+    }
+
+    class Program
+    {
+        public static void display()
+        {
+            Console.WriteLine("Event executed successfully");
+        }
+
+        static void Main(string[] args)
+        {
+            test t = new test();
+            t.notify += display;
+            t.show();
+
+            Console.ReadLine();
+        }
+    }
+}
+```[cite: 13, 14]
+
+---
+
+### Example Output
+
+When you run the program, it will produce the following output:
+
+```text
+Method inside test class
+Event executed successfully
+```[cite: 13, 14]
+

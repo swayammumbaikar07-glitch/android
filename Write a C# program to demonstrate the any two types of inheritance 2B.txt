@@ -1,0 +1,81 @@
+2b 
+Here is the transcribed C# program from the handwritten pages demonstrating Multilevel Inheritance(grandparent -> father -> child), along with its expected output.
+C# Code
+C#
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Pract2B
+{
+    class grandparent
+    {
+        public string gname;
+        public void getname()
+        {
+            Console.WriteLine("Enter grandparent name");
+            gname = Console.ReadLine();
+        }
+    }
+
+    class father : grandparent
+    {
+        public string fname;
+        public void getfname()
+        {
+            Console.WriteLine("Enter father name");
+            fname = Console.ReadLine();
+        }
+    }
+
+    class child : father
+    {
+        public string cname;
+        public void getcname()
+        {
+            getname();
+            getfname();
+            Console.WriteLine("Enter child name");
+            cname = Console.ReadLine();
+        }
+
+        public void show()
+        {
+            Console.WriteLine("I am " + cname + " child of " + fname + " grandchild of " + gname);
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Multilevel Inheritance");
+            child c = new child();
+            c.getcname();
+            c.show();
+
+            Console.ReadLine();
+        }
+    }
+}
+```[cite: 6, 7, 8]
+
+---
+
+### Example Output
+
+If you run the program and enter the names when prompted:
+
+```text
+Multilevel Inheritance
+Enter grandparent name
+Ramesh
+Enter father name
+Suresh
+Enter child name
+Amit
+I am Amit child of Suresh grandchild of Ramesh
+```[cite: 6, 7, 8]

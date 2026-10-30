@@ -1,0 +1,89 @@
+6a 
+Here is the complete transcribed text from the provided images, outlining the step-by-step instructions and code for creating a Progressive Web Application (PWA) for a college information portal:
+
+	•	Aim: Create a website for a college information portal and convert it into a progressive web application. 
+	•	Step 1 - Open Visual Studio 2026 
+	•	Step 2 - Create new project: Click on File $\rightarrow$ New $\rightarrow$ Project 
+	•	Step 3 - Select Project type: Search MVC $\rightarrow$ ASP.NET Core (Model-View-Controller) 
+	•	Step 4 - Configure project: Enter Name and Location to project. 
+	•	Step 5 - Type code in index.cshtml: In solution explorer $\rightarrow$ Views $\rightarrow$ Home$\rightarrow$ index.cshtml $\rightarrow$ type code:  HTML  @{
+	•	    ViewData["Title"] = "Home page";
+	•	}
+	•	
+	•	<div class="text-center">
+	•	    <h1>College Information Portal</h1>
+	•	    <h3>Welcome to JSM college</h3>
+	•	    <p>Courses offered</p>
+	•	    <ul>
+	•	        <li>Bsc IT</li>
+	•	        <li>Bsc CS</li>
+	•	        <li>BMS</li>
+	•	    </ul>
+	•	    <p>contact 7066846201</p>
+	•	</div>
+	•	```
+	•	
+	•	   
+	•	Step 6 - Create service-worker.js: Solution explorer $\rightarrow$ wwwroot $\rightarrow$ Right click $\rightarrow$ Add $\rightarrow$ New Items $\rightarrow$ Search javascript and select $\rightarrow$ save file as service $\rightarrow$ type code[cite: 25]:  JavaScript  self.addEventListener('install', function(event) {
+	•	    console.log('service worker installed');
+	•	});
+	•	
+	•	self.addEventListener('Fetch', 'function' (event) {
+	•	    console.log('Fetching');
+	•	});
+	•	```[cite: 25]
+	•	
+	•	   
+	•	Step 7 - Create manifest.json: In solution explorer $\rightarrow$ wwwroot $\rightarrow$ Right click $\rightarrow$ Add $\rightarrow$ New Items $\rightarrow$ Search json and select $\rightarrow$ save file as manifest.json $\rightarrow$ Click next $\rightarrow$ type code:  JSON  {
+	•	    "name": "College Information Portal",
+	•	    "short_name": "college portal",
+	•	    "start_url": "/",
+	•	    "display": "standalone",
+	•	    "background_color": "#ffffff",
+	•	    "theme_color": "#0d6ffd",
+	•	    "icons": [
+	•	        {
+	•	            "src": "/icons/icon1.png",
+	•	            "sizes": "192x192",
+	•	            "type": "image/png"
+	•	        },
+	•	        {
+	•	            "src": "/icons/icon2.png",
+	•	            "sizes": "192x192",
+	•	            "type": "image/png"
+	•	        }
+	•	    ]
+	•	}
+	•	```[cite: 26]
+	•	
+	•	   
+	•	Step 8 - Create icons folder under wwwroot: 
+	•	Download two png images (icon1.png, icon2.png) 
+	•	In solution explorer $\rightarrow$ wwwroot $\rightarrow$ icons $\rightarrow$ copy images $\rightarrow$ paste them under icons. 
+	•	Step 9 - Type code on layout.cshtml: 
+	•	View $\rightarrow$ shared $\rightarrow$ layout.cshtml $\rightarrow$ type code: 
+	•	HTML  <html>
+	•	<body>
+	•	    ...
+	•	</body>
+	•	<script>
+	•	    If ('ServiceWorker' in navigator) {
+	•	        navigator.ServiceWorker.register('/service-worker.js'),
+	•	        then(c => > console.log('Service worker Registered'));
+	•	    }
+	•	</script>
+	•	</html>
+	•	```[cite: 27]
+	•	
+	•	   
+	•	Step 10 - Open file program.cs: 
+	•	Type the code: 
+	•	C#  app.UseHttpsRedirection();
+	•	app.UseStaticFiles();
+	•	app.UseRouting();
+	•	```[cite: 28]
+	•	
+	•	   
+	•	Step 11 - Save program 
+	•	Step 12 - Run application: 
+	•	Press Ctrl + F5
