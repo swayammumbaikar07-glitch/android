@@ -1,102 +1,0 @@
-10 
-Here is the transcribed text from the provided handwritten pages for Practical No. 10:
-
-	•	Practical No. 10 
-	•	Aim: Create a PWA with a web App manifest file including: 
-	•	App Name 
-	•	Icons 
-	•	Start URL 
-	•	Display mode 
-	•	Implement Push Notifications in a PWA. 
-	•	Step 1 - Create Project 
-	•	Create a simple ASP.NET Core Empty Web APP 
-	•	Project Name: pract10 
-	•	Step 2 - Create manifest file 
-	•	In solution explorer $\rightarrow$ New folder: wwwroot $\rightarrow$ Create JSON file 
-	•	Step 3 - Add code: manifest.json  JSON  {
-	•	    "name": "My PWA",
-	•	    "short_name": "My PWA",
-	•	    "start_url": "/index.html",
-	•	    "display": "standalone",
-	•	    "background_color": "#ffffff",
-	•	    "theme_color": "#0d6ffd",
-	•	    "icons": [
-	•	        {
-	•	            "src": "/icons/icon1.png",
-	•	            "sizes": "192x192",
-	•	            "type": "image/png"
-	•	        }
-	•	    ]
-	•	}
-	•	```[cite: 36, 37]
-	•	
-	•	   
-	•	Step 4 - Add icons 
-	•	Create folder under wwwroot as: wwwroot/icons 
-	•	wwwroot 
-	•	Step 5 - Write code (index.html)  HTML  <!DOCTYPE html>
-	•	<html>
-	•	<head>
-	•	    <meta name="theme-color" content="#0d6ffd">
-	•	    <title>My PWA</title>
-	•	    <link rel="manifest" href="manifest.json">
-	•	</head>
-	•	<body>
-	•	    <h1>My PWA</h1>
-	•	    <button onclick="showNotifications()">Show Notification</button>
-	•	    <script src="app.js"></script>
-	•	</body>
-	•	</html>
-	•	```[cite: 37]
-	•	
-	•	   
-	•	Step 6 - Create JavaScript File (app.js) 
-	•	Add code:  JavaScript  if ('serviceWorker' in navigator) {
-	•	    navigator.serviceWorker.register('server-worker.js').then(c => console.log('Service Worker Registered'));
-	•	}
-	•	
-	•	function showNotification() {
-	•	    Notification.requestPermission().then(permission => {
-	•	        if (permission === 'granted') {
-	•	            navigator.serviceWorker.ready.then(registration => {
-	•	                registration.showNotification('PWA Notification', {
-	•	                    body: 'Push Notification working successfully',
-	•	                    icon: 'icons/icon1.png'
-	•	                });
-	•	            });
-	•	        }
-	•	    });
-	•	}
-	•	```[cite: 38]
-	•	
-	•	   
-	•	Step 6 (cont.) - Write code (server-worker.js)  JavaScript  self.addEventListener('install', event => {
-	•	    console.log('Service Worker Installed');
-	•	});
-	•	
-	•	self.addEventListener('activate', event => {
-	•	    console.log('Service Worker Activated');
-	•	});
-	•	```
-	•	
-	•	   
-	•	Step 7 - Configure Program.cs 
-	•	In solution explorer open: Program.cs[cite: 39] 
-	•	Step 8 - Add code:  C#  var builder = WebApplication.CreateBuilder(args);
-	•	var app = builder.Build();
-	•	
-	•	app.UseDefaultFiles();
-	•	app.UseStaticFiles();
-	•	app.Run();
-	•	```[cite: 39]
-	•	
-	•	   
-	•	Step 9 - Run Application 
-	•	Browser opens URL somewhat similar like: https://localhost:5018 
-	•	Step 10 - Install PWA 
-	•	Open website 
-	•	Click Install 
-	•	App installs like mobile app. 
-	•	Step 11 - Test push Notifications 
-	•	Click show notifications 
-	•	Browser notification will appear.
